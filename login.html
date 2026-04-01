@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login | Fam Tree</title>
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="https://lucide.dev/favicon.ico">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/style.css">
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+    <style>
+        .auth-container {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            background: var(--bg-secondary);
+        }
+
+        .auth-card {
+            background: var(--card-bg);
+            width: 100%;
+            max-width: 450px;
+            padding: 3rem;
+            border-radius: 20px;
+            box-shadow: var(--shadow-lg);
+            position: relative;
+        }
+
+        .auth-logo {
+            text-align: center;
+            margin-bottom: 2rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .auth-logo i {
+            width: 50px;
+            height: 50px;
+            color: var(--secondary-color);
+        }
+
+        .auth-form {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        .input-group {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+            position: relative;
+        }
+
+        .input-group input {
+            padding: 0.8rem 1rem;
+            border: 1px solid var(--border-color);
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            border-radius: var(--border-radius);
+            font-size: 1rem;
+        }
+
+        .input-group input:focus {
+            outline: none;
+            border-color: var(--secondary-color);
+        }
+
+        .eye-toggle {
+            position: absolute;
+            right: 1rem;
+            top: 2.2rem;
+            cursor: pointer;
+            color: var(--text-secondary);
+        }
+
+        [dir="rtl"] .eye-toggle {
+            left: 1rem;
+            right: auto;
+        }
+
+        .auth-controls {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            display: flex;
+            gap: 0.5rem;
+        }
+
+        [dir="rtl"] .auth-controls {
+            left: 1rem;
+            right: auto;
+        }
+
+        .social-auth {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .social-btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            padding: 0.8rem;
+            border: 1px solid var(--border-color);
+            border-radius: var(--border-radius);
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            cursor: pointer;
+            transition: var(--transition);
+            font-size: 0.9rem;
+        }
+
+        .social-btn:hover {
+            border-color: var(--secondary-color);
+            background: var(--bg-secondary);
+        }
+    </style>
+</head>
+
+<body data-theme="light">
+
+    <div class="auth-container">
+        <div class="auth-card">
+            <div class="auth-controls">
+                <button class="icon-btn theme-toggle" style="padding: 0.3rem;" aria-label="Toggle Dark Mode"><i
+                        data-lucide="moon"></i></button>
+                <button class="icon-btn rtl-toggle" style="padding: 0.3rem;" aria-label="Toggle RTL Mode"><i
+                        data-lucide="languages"></i></button>
+            </div>
+
+            <div class="auth-logo">
+                <i data-lucide="tree-pine"></i>
+                <h2 style="margin: 0; font-size: 1.5rem;">Welcome Back</h2>
+                <p>Sign in to your client dashboard</p>
+            </div>
+
+            <form class="auth-form" action="dashboard.html">
+                <div class="input-group">
+                    <label>Email Address</label>
+                    <input type="email" placeholder="email@example.com" required>
+                </div>
+                <div class="input-group">
+                    <label>Password</label>
+                    <input type="password" id="password-input" placeholder="••••••••" required>
+                    <i data-lucide="eye" class="eye-toggle" id="eye-toggle"></i>
+                </div>
+
+                <div style="display: flex; justify-content: space-between; align-items: center; font-size: 0.9rem;">
+                    <label style="display: flex; align-items: center; gap: 0.5rem; cursor: pointer;">
+                        <input type="checkbox"> Remember Me
+                    </label>
+                    <a href="#" style="color: var(--secondary-color); text-decoration: none;">Forgot Password?</a>
+                </div>
+
+                <button type="submit" class="btn btn-primary" style="width: 100%; justify-content: center;">Sign
+                    In</button>
+            </form>
+
+            <div style="margin: 2rem 0; text-align: center; position: relative;">
+                <span
+                    style="background: var(--card-bg); padding: 0 1rem; position: relative; z-index: 1; color: var(--text-secondary);">Or
+                    continue with</span>
+                <div
+                    style="position: absolute; top: 50%; left: 0; width: 100%; height: 1px; background: var(--border-color);">
+                </div>
+            </div>
+
+            <div class="social-auth">
+                <button class="social-btn"><i data-lucide="chrome" style="width: 18px;"></i> Google</button>
+                <button class="social-btn"><i data-lucide="apple" style="width: 18px;"></i> Apple</button>
+            </div>
+
+            <p style="text-align: center; margin-top: 2rem; color: var(--text-secondary);">
+                Don't have an account? <a href="register.html"
+                    style="color: var(--secondary-color); text-decoration: none; font-weight: 600;">Create Account</a>
+            </p>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="js/main.js"></script>
+    <script>
+        lucide.createIcons();
+
+        // Eye Toggle
+        const passInput = document.getElementById('password-input');
+        const eyeBtn = document.getElementById('eye-toggle');
+
+        eyeBtn.addEventListener('click', () => {
+            const type = passInput.getAttribute('type') === 'password' ? 'text' : 'password';
+            passInput.setAttribute('type', type);
+            eyeBtn.setAttribute('data-lucide', type === 'password' ? 'eye' : 'eye-off');
+            lucide.createIcons();
+        });
+    </script>
+</body>
+
+</html>

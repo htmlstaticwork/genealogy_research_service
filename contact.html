@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us | Fam Tree</title>
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="https://lucide.dev/favicon.ico">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/style.css">
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+    <style>
+        .contact-form-container {
+            background: var(--card-bg);
+            padding: 3rem;
+            border-radius: 20px;
+            box-shadow: var(--shadow-lg);
+            border: 1px solid var(--border-color);
+        }
+        .form-group {
+            margin-bottom: 1.5rem;
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+        .form-group label {
+            font-weight: 600;
+            color: var(--text-primary);
+        }
+        .form-group input, .form-group textarea {
+            padding: 0.8rem 1rem;
+            border: 1px solid var(--border-color);
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            border-radius: var(--border-radius);
+            font-size: 1rem;
+        }
+        .form-group input:focus, .form-group textarea:focus {
+            outline: none;
+            border-color: var(--secondary-color);
+        }
+        .map-container {
+            width: 100%;
+            height: 450px;
+            border-radius: 20px;
+            overflow: hidden;
+            border: 1px solid var(--border-color);
+            margin-top: 4rem;
+        }
+        @media (max-width: 767px) {
+            .contact-form-container {
+                padding: 1.5rem;
+                text-align: center;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+            }
+            .form-group { width: 100%; }
+        }
+    </style>
+</head>
+<body data-theme="light">
+
+    <!-- Header -->
+    <header id="main-header">
+        <nav class="nav-container">
+            <a href="index.html" class="logo">
+                <i data-lucide="tree-pine"></i>
+                <span>Fam Tree</span>
+            </a>
+            
+            <div class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="home2.html">Home 2</a>
+                <a href="services.html">Services</a>
+                <a href="pricing.html">Pricing</a>
+                <a href="contact.html" class="active">Contact</a>
+                <a href="dashboard.html">Dashboard</a>
+                
+                <div class="mobile-controls">
+                    <div class="mobile-toggle-group">
+                        <button class="icon-btn theme-toggle" aria-label="Toggle Dark Mode">
+                            <i data-lucide="moon"></i>
+                        </button>
+                        <button class="icon-btn rtl-toggle" aria-label="Toggle RTL Mode">
+                            <i data-lucide="languages"></i>
+                        </button>
+                    </div>
+                    <a href="login.html" class="login-btn">Login</a>
+                </div>
+            </div>
+
+            <div class="controls">
+                <button class="icon-btn theme-toggle" aria-label="Toggle Dark Mode">
+                    <i data-lucide="moon"></i>
+                </button>
+                <button class="icon-btn rtl-toggle" aria-label="Toggle RTL Mode">
+                    <i data-lucide="languages"></i>
+                </button>
+                <a href="login.html" class="login-btn" id="login-btn-desktop">Login</a>
+                <div class="hamburger" id="hamburger-menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero-section" style="background-image: url('https://images.unsplash.com/photo-1516733725897-1aa73b87c8e8?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');">
+        <div class="container">
+            <h1>Ready to Start Your Journey?</h1>
+            <p>Connect with a specialized genealogist today. Whether you have a specific question or want to commission a full lineage report, we're here to help.</p>
+            <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+                <a href="#contact-grid" class="btn btn-secondary">Send Message</a>
+                <a href="tel:+18007668748" class="btn btn-primary" style="background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.3);">Call Us Now</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact-grid" style="padding: 80px 0;">
+        <div class="container">
+            <div class="contact-grid">
+                <div class="mobile-stack" style="display: flex; flex-direction: column; gap: 2rem;">
+                    <!-- Contact Cards -->
+                    <div class="card" style="align-items: flex-start; text-align: left; padding: 2rem;">
+                        <i data-lucide="mail" style="color: var(--secondary-color); margin-bottom: 1rem; width: 32px; height: 32px;"></i>
+                        <h3 style="margin-left: 0; text-align: left;">Email Our Team</h3>
+                        <p style="margin-left: 0; text-align: left; margin-bottom: 1rem;">Write to us for research inquiries or custom project quotes.</p>
+                        <a href="mailto:info@FamTree.com" style="color: var(--secondary-color); font-weight: 600; text-decoration: none; margin-left: 0;">info@FamTree.com</a>
+                    </div>
+                    
+                    <div class="card" style="align-items: flex-start; text-align: left; padding: 2rem;">
+                        <i data-lucide="phone" style="color: var(--secondary-color); margin-bottom: 1rem; width: 32px; height: 32px;"></i>
+                        <h3 style="margin-left: 0; text-align: left;">Call Support</h3>
+                        <p style="margin-left: 0; text-align: left; margin-bottom: 1rem;">Speak to a representative Monday - Friday, 9am to 6pm EST.</p>
+                        <a href="tel:+18007668748" style="color: var(--secondary-color); font-weight: 600; text-decoration: none; margin-left: 0;">+1 (800) ROOTS-4U</a>
+                    </div>
+
+                    <div class="card" style="align-items: flex-start; text-align: left; padding: 2rem;">
+                        <h3 style="margin-left: 0; text-align: left;">Follow Us</h3>
+                        <p style="margin-left: 0; text-align: left; margin-bottom: 1rem;">Stay updated</p>
+                        <div class="footer-social" style="margin-top: 0.5rem;">
+                            <a href="#" class="social-link social-fb" aria-label="Facebook"><span>F</span></a>
+                            <a href="#" class="social-link social-tw" aria-label="X"><span>X</span></a>
+                            <a href="#" class="social-link social-ig" aria-label="Instagram"><span>I</span></a>
+                            <a href="#" class="social-link social-ln" aria-label="LinkedIn"><span>L</span></a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Contact Form -->
+                <div class="contact-form-container" style="background: var(--card-bg); border-radius: 20px; box-shadow: var(--shadow-lg); border: 1px solid var(--border-color);">
+                    <form id="contact-form">
+                        <div class="form-grid">
+                            <div class="form-group">
+                                <label>First Name</label>
+                                <input type="text" placeholder="John" required>
+                            </div>
+                            <div class="form-group">
+                                <label>Last Name</label>
+                                <input type="text" placeholder="Doe" required>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label>Email Address</label>
+                            <input type="email" placeholder="email@example.com" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Your Message?</label>
+                            <textarea rows="1" placeholder="Tell us about the ancestors you are looking for..." required></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label>Package Choice</label>
+                            <select style="padding: 0.8rem 1rem; border: 1px solid var(--border-color); background: var(--bg-primary); color: var(--text-primary); border-radius: var(--border-radius); font-size: 1rem;">
+                                <option>Basic Descent ($299)</option>
+                                <option>Heritage Seeker ($749)</option>
+                                <option>Legacy Professional ($1,499)</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label>How can we help?</label>
+                            <textarea rows="6" placeholder="Tell us about the ancestors you are looking for..." required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary" style="width: 100%; justify-content: center;">Send Message</button>
+                    </form>
+                </div>
+            </div>
+
+            <!-- Styled Google Map -->
+            <div class="map-container">
+                <iframe 
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2948.330554160756!2d-71.0624!3d42.3582!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89e3708466b0d911%3A0xe5a3c10a4e76d9!2sBoston%2C%20MA!5e0!3m2!1sen!2sus!4v1617150000000!5m2!1sen!2sus" 
+                    width="100%" height="100%" style="border:0; filter: grayscale(1) invert(0) contrast(1.2);" allowfullscreen="" loading="lazy">
+                </iframe>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div>
+                    <a href="index.html" class="logo" style="margin-bottom: 1rem;">
+                        <i data-lucide="tree-pine"></i>
+                        <span>Fam Tree</span>
+                    </a>
+                    <p>Making genealogy professional, accessible, and fascinating for everyone.</p>
+                    <div class="footer-social">
+                        <a href="#" class="social-link social-fb" aria-label="Facebook"><span>F</span></a>
+                        <a href="#" class="social-link social-tw" aria-label="X"><span>X</span></a>
+                        <a href="#" class="social-link social-ig" aria-label="Instagram"><span>I</span></a>
+                        <a href="#" class="social-link social-ln" aria-label="LinkedIn"><span>L</span></a>
+                    </div>
+                </div>
+                <div>
+                    <h4>Quick Links</h4>
+                    <ul style="list-style: none; display: flex; flex-direction: column; gap: 0.5rem;">
+                        <li><a href="index.html" style="text-decoration: none; color: var(--text-secondary);">Home</a>
+                        </li>
+                        <li><a href="services.html"
+                                style="text-decoration: none; color: var(--text-secondary);">Services</a></li>
+                        <li><a href="about.html" style="text-decoration: none; color: var(--text-secondary);">About
+                                Us</a></li>
+                        <li><a href="pricing.html"
+                                style="text-decoration: none; color: var(--text-secondary);">Pricing</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4>Resources</h4>
+                    <ul style="list-style: none; display: flex; flex-direction: column; gap: 0.5rem;">
+                        <li><a href="#" style="text-decoration: none; color: var(--text-secondary);">Success Stories</a>
+                        </li>
+                        <li><a href="#" style="text-decoration: none; color: var(--text-secondary);">Genealogy Blog</a>
+                        </li>
+                        <li><a href="#" style="text-decoration: none; color: var(--text-secondary);">Archive Access</a>
+                        </li>
+                        <li><a href="#" style="text-decoration: none; color: var(--text-secondary);">Client Support</a>
+                        </li>
+                    </ul>
+                </div>
+                <div>
+                    <h4>Contact</h4>
+                    <ul style="list-style: none; display: flex; flex-direction: column; gap: 0.5rem;">
+                        <li style="display: flex; gap: 0.5rem; color: var(--text-secondary);"><i data-lucide="mail"></i>
+                            info@Fam Tree.com</li>
+                        <li style="display: flex; gap: 0.5rem; color: var(--text-secondary);"><i
+                                data-lucide="phone"></i> +1 (800) ROOTS-4U</li>
+                        <li style="display: flex; gap: 0.5rem; color: var(--text-secondary);"><i
+                                data-lucide="map-pin"></i> 123 Heritage Lane, Boston, MA</li>
+                    </ul>
+                </div>
+            </div>
+            <div style="border-top: 1px solid var(--border-color); padding-top: 2rem; text-align: center;">
+                <p>&copy; 2026 Fam Tree Genealogy Services. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="js/main.js"></script>
+    <script>
+        lucide.createIcons();
+    </script>
+</body>
+</html>

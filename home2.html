@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fam Tree Premium | Elite Genealogy & Archival Research</title>
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="https://lucide.dev/favicon.ico">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/style.css">
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+    <style>
+        body { font-family: 'Outfit', sans-serif; }
+    </style>
+</head>
+<body data-theme="light">
+
+    <!-- Header (Step 4) -->
+    <header id="main-header">
+        <nav class="nav-container">
+           <a href="index.html" class="logo">
+                <i data-lucide="tree-pine"></i>
+                <span>Fam Tree</span>
+            </a>
+            
+            
+            <div class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="home2.html" class="active">Home 2</a>
+                <a href="services.html">Services</a>
+                <a href="pricing.html">Pricing</a>
+                <a href="contact.html">Contact</a>
+                <a href="dashboard.html">Dashboard</a>
+                
+                <div class="mobile-controls">
+                    <div class="mobile-toggle-group">
+                        <button class="icon-btn theme-toggle" aria-label="Toggle Dark Mode">
+                            <i data-lucide="moon"></i>
+                        </button>
+                        <button class="icon-btn rtl-toggle" aria-label="Toggle RTL Mode">
+                            <i data-lucide="languages"></i>
+                        </button>
+                    </div>
+                    <a href="login.html" class="login-btn">Login</a>
+                </div>
+            </div>
+
+            <div class="controls">
+                <button class="icon-btn theme-toggle" aria-label="Toggle Dark Mode">
+                    <i data-lucide="moon"></i>
+                </button>
+                <button class="icon-btn rtl-toggle" aria-label="Toggle RTL Mode">
+                    <i data-lucide="languages"></i>
+                </button>
+                <a href="login.html" class="login-btn" id="login-btn-desktop">Login</a>
+                <div class="hamburger" id="hamburger-menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- 1. Premium Hero (Step 8) -->
+    <section id="hero"
+        style="background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://t3.ftcdn.net/jpg/05/33/88/74/360_F_533887490_mtV3A1MZMd8DcFyDgOHtfmSEXhXvJj7N.jpg'); background-size: cover; background-position: center; min-height: 90vh; display: flex; align-items: center; justify-content: center; text-align: center; color: #fff;">
+        <div class="container hero-content" style="max-width: 900px;">
+            <h1
+                style="font-size: clamp(2.5rem, 6vw, 4.5rem); margin-bottom: 1.5rem; text-shadow: 0 4px 6px rgba(0,0,0,0.3);">
+                Preserving Noble Heritages</h1>
+            <p
+                style="font-size: 1.25rem; color: #f0f0f0; margin-bottom: 2.5rem; text-shadow: 0 2px 4px rgba(0,0,0,0.3);">
+                For those who demand more than a simple tree. We provide white-glove archival research and beautifully curated historical narratives.</p>
+            <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+                <a href="pricing.html" class="btn btn-secondary">Pricing Details</a>
+                
+            </div>
+        </div>
+    </section>
+
+    <!-- 2. Metrics Section (Step 14/17 - Stats) -->
+    <section style="background: var(--primary-color); color: #fff; padding: 60px 0;">
+        <div class="container">
+            <div class="grid grid-4">
+                <div style="text-align: center;">
+                    <div class="stats-number">500+</div>
+                    <p style="color: #ccc;">Archives Explored</p>
+                </div>
+                <div style="text-align: center;">
+                    <div class="stats-number">98%</div>
+                    <p style="color: #ccc;">Connection Rate</p>
+                </div>
+                <div style="text-align: center;">
+                    <div class="stats-number">12</div>
+                    <p style="color: #ccc;">Countries Active</p>
+                </div>
+                <div style="text-align: center;">
+                    <div class="stats-number">24/7</div>
+                    <p style="color: #ccc;">Specialist Access</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 3. Feature Highlight (Different Layout) -->
+    <section id="process">
+        <section id="process">
+    <div class="container">
+        <div style="text-align: center; margin-bottom: 5rem;">
+            <h2 style="font-size: 2.5rem;">The Elite Methodology</h2>
+            <p>How we uncover the intricacies of your past.</p>
+        </div>
+
+        <div class="grid grid-3">
+
+            <!-- CARD 1 -->
+            <div class="card" style="border: none; background: var(--bg-secondary); padding: 1rem;">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQDCgBiYxyesVV2kPhgodti-C8lfnalWM6lsg&s"
+                    style="width:100%;height:180px;object-fit:cover;border-radius:var(--border-radius);margin-bottom:1.5rem;">
+                <div style="background: var(--bg-primary); width: 80px; height: 80px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-bottom: 2rem; box-shadow: var(--shadow-sm);">
+                    <i data-lucide="book-open" style="color: var(--secondary-color);"></i>
+                </div>
+                <h3>Manuscript Analysis</h3>
+                <p>Meticulous review of handwritten records from the 17th to 19th century.</p>
+            </div>
+
+            <!-- CARD 2 -->
+            <div class="card" style="border: none; background: var(--bg-secondary); padding: 1rem;">
+                <img src="https://brewminate.com/wp-content/uploads/2019/06/062719-54-History-Medieval-Middle-Ages-Religion-Christian-Inquisition-1024x802.jpg"
+                    style="width:100%;height:180px;object-fit:cover;border-radius:var(--border-radius);margin-bottom:1.5rem;">
+                <div style="background: var(--bg-primary); width: 80px; height: 80px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-bottom: 2rem; box-shadow: var(--shadow-sm);">
+                    <i data-lucide="globe" style="color: var(--secondary-color);"></i>
+                </div>
+                <h3>Global Inquisitors</h3>
+                <p>On-the-ground researchers in Europe, Americas, and Asia for local archives.</p>
+            </div>
+
+            <!-- CARD 3 -->
+            <div class="card" style="border: none; background: var(--bg-secondary); padding: 1rem;">
+                <img src="https://proedu.com/cdn/shop/articles/AI-Powered_Restoration_of_Vintage_Photographs-_Reviving_History_with_Modern_Technology.jpg?v=1732303718&width=2048"
+                    style="width:100%;height:180px;object-fit:cover;border-radius:var(--border-radius);margin-bottom:1.5rem;">
+                <div style="background: var(--bg-primary); width: 80px; height: 80px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-bottom: 2rem; box-shadow: var(--shadow-sm);">
+                    <i data-lucide="cpu" style="color: var(--secondary-color);"></i>
+                </div>
+                <h3>AI Restoration</h3>
+                <p>Using proprietary AI to restore and translate damaged or ancient historical documents.</p>
+            </div>
+
+            <!-- NEW CARD 4 -->
+            <div class="card" style="border: none; background: var(--bg-secondary); padding: 1rem;">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQa8rE4wgL2WxbuAF4PSrKHx9s3N5tP7_mwRA&s"
+                    style="width:100%;height:180px;object-fit:cover;border-radius:var(--border-radius);margin-bottom:1.5rem;">
+                <div style="background: var(--bg-primary); width: 80px; height: 80px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-bottom: 2rem; box-shadow: var(--shadow-sm);">
+                    <i data-lucide="search" style="color: var(--secondary-color);"></i>
+                </div>
+                <h3>Archive Exploration</h3>
+                <p>Deep exploration of hidden archives and rare documents across global repositories.</p>
+            </div>
+
+            <!-- NEW CARD 5 -->
+            <div class="card" style="border: none; background: var(--bg-secondary); padding: 1rem;">
+                <img src="https://cdn-blog.findmykids.org/2023/12/shutterstock_1705010935-1.jpg"
+                    style="width:100%;height:180px;object-fit:cover;border-radius:var(--border-radius);margin-bottom:1.5rem;">
+                <div style="background: var(--bg-primary); width: 80px; height: 80px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-bottom: 2rem; box-shadow: var(--shadow-sm);">
+                    <i data-lucide="map-pin" style="color: var(--secondary-color);"></i>
+                </div>
+                <h3>Location Tracing</h3>
+                <p>Pinpoint ancestral origins and trace historical locations with precision mapping.</p>
+            </div>
+
+            <!-- NEW CARD 6 -->
+            <div class="card" style="border: none; background: var(--bg-secondary); padding: 1rem;">
+                <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=400&q=80"
+                    style="width:100%;height:180px;object-fit:cover;border-radius:var(--border-radius);margin-bottom:1.5rem;">
+                <div style="background: var(--bg-primary); width: 80px; height: 80px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-bottom: 2rem; box-shadow: var(--shadow-sm);">
+                    <i data-lucide="users" style="color: var(--secondary-color);"></i>
+                </div>
+                <h3>Collaborative Research</h3>
+                <p>Work alongside historians and experts to validate and expand your family story.</p>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+    <!-- 4. Sample Reports Section -->
+    <section style="background: var(--bg-secondary);">
+        <div class="container">
+            <div class="mobile-stack" style="display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center;">
+                <div class="mobile-text-center">
+                    <h2 style="font-size: clamp(2rem, 4vw, 2.5rem);">Exquisite Reporting</h2>
+                    <p style="margin-bottom: 2rem;">Every client receives a custom-bound Ancestry Book, featuring high-resolution scans of original records and a narrative of their ancestors' lives.</p>
+                    <a href="#" class="btn btn-primary">Download Digital Sample</a>
+                </div>
+                <div class="grid grid-2">
+                    <div class="card" style="padding: 1.5rem;">
+                        <div style="width: 100%; height: 100px; border-radius: var(--border-radius); overflow: hidden; margin-bottom: 1rem;">
+                            <img src="https://images.unsplash.com/photo-1544027993-37dbfe43562a?auto=format&fit=crop&w=400&q=80" alt="Heirloom" style="width: 100%; height: 100%; object-fit: cover;">
+                        </div>
+                        <i data-lucide="award" style="margin-bottom: 0.5rem; color: var(--secondary-color);"></i>
+                        <h4>Heirloom Quality</h4>
+                    </div>
+                    <div class="card" style="padding: 1.5rem;">
+                        <div style="width: 100%; height: 100px; border-radius: var(--border-radius); overflow: hidden; margin-bottom: 1rem;">
+                            <img src="https://gjia.georgetown.edu/wp-content/uploads/sites/20/2022/07/3388915151_388bfe39fa_b-2000x1125.jpg" alt="Artifacts" style="width: 100%; height: 100%; object-fit: cover;">
+                        </div>
+                        <i data-lucide="camera" style="margin-bottom: 0.5rem; color: var(--secondary-color);"></i>
+                        <h4>Digital Artifacts</h4>
+                    </div>
+                    <div class="card" style="padding: 1.5rem;">
+                        <div style="width: 100%; height: 100px; border-radius: var(--border-radius); overflow: hidden; margin-bottom: 1rem;">
+                            <img src="https://images.unsplash.com/photo-1450101499163-c8848c66ca85?auto=format&fit=crop&w=400&q=80" alt="Citation" style="width: 100%; height: 100%; object-fit: cover;">
+                        </div>
+                        <i data-lucide="list-checks" style="margin-bottom: 0.5rem; color: var(--secondary-color);"></i>
+                        <h4>Source Citation</h4>
+                    </div>
+                    <div class="card" style="padding: 1.5rem;">
+                        <div style="width: 100%; height: 100px; border-radius: var(--border-radius); overflow: hidden; margin-bottom: 1rem;">
+                            <img src="https://images.unsplash.com/photo-1529156069898-49953e39b3ac?auto=format&fit=crop&w=400&q=80" alt="Collaborative" style="width: 100%; height: 100%; object-fit: cover;">
+                        </div>
+                        <i data-lucide="users" style="margin-bottom: 0.5rem; color: var(--secondary-color);"></i>
+                        <h4>Collaborative Access</h4>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 5. Interactive Dashboard Tease -->
+    <section>
+        <div class="container mobile-column-stack" style="background: linear-gradient(135deg, #0d1b2a 0%, #1b263b 100%); border-radius: 30px; overflow: hidden; display: flex; align-items: stretch; padding: 0;">
+            <div style="flex: 1; padding: 4rem; color: #fff;">
+                <h2 style="color: #fff;">The Client Portal</h2>
+                <p style="color: #ccc; margin-bottom: 2rem;">Track our progress in real-time. Message your dedicated researcher and view documents the moment they are uncovered.</p>
+                <a href="dashboard.html" class="btn btn-secondary">Explore the Dashboard</a>
+            </div>
+            <div style="flex: 1; min-height: 300px; background: url('https://images.unsplash.com/photo-1542744173-8e7e53415bb0?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80'); background-size: cover; background-position: center;"></div>
+        </div>
+    </section>
+
+    <!-- 6. Footer (Global) -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div>
+                    <a href="index.html" class="logo" style="margin-bottom: 1rem;">
+                        <i data-lucide="tree-pine"></i>
+                        <span>Fam Tree</span>
+                    </a>
+                    <p>Making genealogy professional, accessible, and fascinating for everyone.</p>
+                    <div class="footer-social">
+                        <a href="#" class="social-link social-fb" aria-label="Facebook"><span>F</span></a>
+                        <a href="#" class="social-link social-tw" aria-label="X"><span>X</span></a>
+                        <a href="#" class="social-link social-ig" aria-label="Instagram"><span>I</span></a>
+                        <a href="#" class="social-link social-ln" aria-label="LinkedIn"><span>L</span></a>
+                    </div>
+                </div>
+                <div>
+                    <h4>Quick Links</h4>
+                    <ul style="list-style: none; display: flex; flex-direction: column; gap: 0.5rem;">
+                        <li><a href="index.html" style="text-decoration: none; color: var(--text-secondary);">Home</a>
+                        </li>
+                        <li><a href="services.html"
+                                style="text-decoration: none; color: var(--text-secondary);">Services</a></li>
+                        <li><a href="about.html" style="text-decoration: none; color: var(--text-secondary);">About
+                                Us</a></li>
+                        <li><a href="pricing.html"
+                                style="text-decoration: none; color: var(--text-secondary);">Pricing</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4>Resources</h4>
+                    <ul style="list-style: none; display: flex; flex-direction: column; gap: 0.5rem;">
+                        <li><a href="#" style="text-decoration: none; color: var(--text-secondary);">Success Stories</a>
+                        </li>
+                        <li><a href="#" style="text-decoration: none; color: var(--text-secondary);">Genealogy Blog</a>
+                        </li>
+                        <li><a href="#" style="text-decoration: none; color: var(--text-secondary);">Archive Access</a>
+                        </li>
+                        <li><a href="#" style="text-decoration: none; color: var(--text-secondary);">Client Support</a>
+                        </li>
+                    </ul>
+                </div>
+                <div>
+                    <h4>Contact</h4>
+                    <ul style="list-style: none; display: flex; flex-direction: column; gap: 0.5rem;">
+                        <li style="display: flex; gap: 0.5rem; color: var(--text-secondary);"><i data-lucide="mail"></i>
+                            info@Fam Tree.com</li>
+                        <li style="display: flex; gap: 0.5rem; color: var(--text-secondary);"><i
+                                data-lucide="phone"></i> +1 (800) ROOTS-4U</li>
+                        <li style="display: flex; gap: 0.5rem; color: var(--text-secondary);"><i
+                                data-lucide="map-pin"></i> 123 Heritage Lane, Boston, MA</li>
+                    </ul>
+                </div>
+            </div>
+            <div style="border-top: 1px solid var(--border-color); padding-top: 2rem; text-align: center;">
+                <p>&copy; 2026 Fam Tree Genealogy Services. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="js/main.js"></script>
+    <script>
+        lucide.createIcons();
+    </script>
+</body>
+</html>

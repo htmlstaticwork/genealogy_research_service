@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fam Tree | Discover Your Roots, Uncover Your History</title>
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="https://lucide.dev/favicon.ico">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/style.css">
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+</head>
+
+<body data-theme="light">
+
+    <!-- Header (Step 4) -->
+    <header id="main-header">
+        <nav class="nav-container">
+            <a href="index.html" class="logo">
+                <i data-lucide="tree-pine"></i>
+                <span>Fam Tree</span>
+            </a>
+
+            <div class="nav-links">
+                <a href="index.html" class="active">Home</a>
+                <a href="home2.html">Home 2</a>
+                <a href="services.html">Services</a>
+                <a href="pricing.html">Pricing</a>
+                <a href="contact.html">Contact</a>
+                <a href="dashboard.html">Dashboard</a>
+
+                <div class="mobile-controls">
+                    <div class="mobile-toggle-group">
+                        <button class="icon-btn theme-toggle" aria-label="Toggle Dark Mode">
+                            <i data-lucide="moon"></i>
+                        </button>
+                        <button class="icon-btn rtl-toggle" aria-label="Toggle RTL Mode">
+                            <i data-lucide="languages"></i>
+                        </button>
+                    </div>
+                    <a href="login.html" class="login-btn">Login</a>
+                </div>
+            </div>
+
+            <div class="controls">
+                <button class="icon-btn theme-toggle" aria-label="Toggle Dark Mode">
+                    <i data-lucide="moon"></i>
+                </button>
+                <button class="icon-btn rtl-toggle" aria-label="Toggle RTL Mode">
+                    <i data-lucide="languages"></i>
+                </button>
+                <a href="login.html" class="login-btn" id="login-btn-desktop">Login</a>
+                <div class="hamburger" id="hamburger-menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- 1. Hero Section (Step 7) -->
+    <section id="hero"
+        style="background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://images.stockcake.com/public/c/8/5/c851ef48-970d-474e-9f16-f80fe208108b_large/planting-with-grandfather-stockcake.jpg'); background-size: cover; background-position: center; min-height: 90vh; display: flex; align-items: center; justify-content: center; text-align: center; color: #fff;">
+        <div class="container hero-content" style="max-width: 900px;">
+            <h1
+                style="font-size: clamp(2.5rem, 6vw, 4.5rem); margin-bottom: 1.5rem; text-shadow: 0 4px 6px rgba(0,0,0,0.3);">
+                Discover Your Family's Epic Legacy</h1>
+            <p
+                style="font-size: 1.25rem; color: #f0f0f0; margin-bottom: 2.5rem; text-shadow: 0 2px 4px rgba(0,0,0,0.3);">
+                Our master genealogists help you piece together the stories of your ancestors, tracing your roots back
+                centuries with precision and care.</p>
+            <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+                <a href="pricing.html" class="btn btn-secondary">Get Your Report</a>
+                
+            </div>
+        </div>
+    </section>
+
+    <!-- 2. Services Section (Step 7) -->
+    <section id="services">
+        <div class="container">
+            <div style="text-align: center; margin-bottom: 4rem;">
+                <h2 style="font-size: 2.5rem;">Our Research Services</h2>
+                <p>Expert-led investigation into your past, delivered with a modern touch.</p>
+            </div>
+            <div class="grid grid-3">
+                <div class="card">
+                    <div
+                        style="width: 100%; height: 180px; border-radius: var(--border-radius); overflow: hidden; margin-bottom: 1.5rem;">
+                        <img src="https://cdn-ildicnf.nitrocdn.com/RaVcSOySObzEWINmkfYUCYqUpcskbIoR/assets/images/optimized/rev-edc653f/www.flatworldsolutions.com/research-analysis/images/research-analysis-services.webp"
+                            alt="Ancestry Deep-Dive" style="width: 100%; height: 100%; object-fit: cover;">
+                    </div>
+                    <div style="margin-bottom: 1rem;"><i data-lucide="search"
+                            style="width: 32px; height: 32px; color: var(--secondary-color);"></i></div>
+                    <h3>Ancestry Dive</h3>
+                    <p>Comprehensive trace of your lineage up to 6 generations with documented evidence.</p>
+                    <a href="services.html" class="btn btn-primary" style="margin-top: 1.5rem;">Learn More</a>
+                </div>
+                <div class="card">
+                    <div
+                        style="width: 100%; height: 180px; border-radius: var(--border-radius); overflow: hidden; margin-bottom: 1.5rem;">
+                        <img src="https://i.natgeofe.com/n/54ab8be4-cdb4-4f77-9c31-396166cbd6a1/01-dna-nationalgeographic_2490526.jpg"
+                            alt="DNA Interpretation" style="width: 100%; height: 100%; object-fit: cover;">
+                    </div>
+                    <div style="margin-bottom: 1rem;"><i data-lucide="dna"
+                            style="width: 32px; height: 32px; color: var(--secondary-color);"></i></div>
+                    <h3>DNA Interpretation</h3>
+                    <p>Professional analysis of your genetic results to find lost cousins and regional origins.</p>
+                    <a href="services.html" class="btn btn-primary" style="margin-top: 1.5rem;">Learn More</a>
+                </div>
+                <div class="card">
+                    <div
+                        style="width: 100%; height: 180px; border-radius: var(--border-radius); overflow: hidden; margin-bottom: 1.5rem;">
+                        <img src="https://blog.myheritage.com/wp-content/uploads/A_table_with_a_heap_of_documents_on_it-1732808741153-e1733914135484-753x423.jpg"
+                            alt="Historical Records" style="width: 100%; height: 100%; object-fit: cover;">
+                    </div>
+                    <div style="margin-bottom: 1rem;"><i data-lucide="file-text"
+                            style="width: 32px; height: 32px; color: var(--secondary-color);"></i></div>
+                    <h3>Historical Records</h3>
+                    <p>Access to restricted archive records, census data, and military history files.</p>
+                    <a href="services.html" class="btn btn-primary" style="margin-top: 1.5rem;">Learn More</a>
+                </div>
+                <div class="card">
+    <div
+        style="width: 100%; height: 180px; border-radius: var(--border-radius); overflow: hidden; margin-bottom: 1.5rem;">
+        <img src="https://m.media-amazon.com/images/I/61j4xUYisyS._AC_SL400_.jpg"
+            alt="Family Tree Design" style="width: 100%; height: 100%; object-fit: cover;">
+    </div>
+    <div style="margin-bottom: 1rem;">
+        <i data-lucide="git-branch"
+            style="width: 32px; height: 32px; color: var(--secondary-color);"></i>
+    </div>
+    <h3>Family Tree Design</h3>
+    <p>Beautifully crafted visual family trees that bring your ancestry to life in elegant formats.</p>
+    <a href="services.html" class="btn btn-primary" style="margin-top: 1.5rem;">Learn More</a>
+</div>
+
+<div class="card">
+    <div
+        style="width: 100%; height: 180px; border-radius: var(--border-radius); overflow: hidden; margin-bottom: 1.5rem;">
+        <img src="https://striking-women.org/sites/striking-women.org/files/styles/media_responsive_widest/public/migration_map.png"
+            alt="Migration Mapping" style="width: 100%; height: 100%; object-fit: cover;">
+    </div>
+    <div style="margin-bottom: 1rem;">
+        <i data-lucide="map"
+            style="width: 32px; height: 32px; color: var(--secondary-color);"></i>
+    </div>
+    <h3>Migration Mapping</h3>
+    <p>Track your ancestors’ journeys across regions and countries with detailed migration maps.</p>
+    <a href="services.html" class="btn btn-primary" style="margin-top: 1.5rem;">Learn More</a>
+</div>
+
+<div class="card">
+    <div
+        style="width: 100%; height: 180px; border-radius: var(--border-radius); overflow: hidden; margin-bottom: 1.5rem;">
+        <img src="https://www.parson-europe.com/sites/default/files/2023-10/PAG_Illustrationen_Migration.png"
+            alt="Legacy Documentation" style="width: 100%; height: 100%; object-fit: cover;">
+    </div>
+    <div style="margin-bottom: 1rem;">
+        <i data-lucide="book-open"
+            style="width: 32px; height: 32px; color: var(--secondary-color);"></i>
+    </div>
+    <h3>Legacy Documentation</h3>
+    <p>Professionally written family history books preserving stories, records, and generational heritage.</p>
+    <a href="services.html" class="btn btn-primary" style="margin-top: 1.5rem;">Learn More</a>
+</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 3. About Section (Step 9) -->
+    <section id="about" style="background-color: var(--bg-secondary); text-align: center;">
+        <div class="container">
+            <div style="max-width: 900px; margin: 0 auto;">
+                <h2 style="font-size: clamp(2rem, 4vw, 3rem); margin-bottom: 2rem;">Preserving History, One Story at a Time</h2>
+                <div style="border-radius: var(--border-radius); overflow: hidden; height: 400px; margin-bottom: 3rem;">
+                    <img src="https://scottpublib.org/wp-content/uploads/2021/12/Genealogy-5.jpg"
+                        alt="Genealogy Research" style="width: 100%; height: 100%; object-fit: cover;">
+                </div>
+                <p style="margin-bottom: 2.5rem; font-size: 1.1rem; max-width: 800px; margin-left: auto; margin-right: auto;">
+                    Fam Tree was founded on the belief that everyone deserves to know
+                    their origin story. Our team of certified genealogists has over 50 years of combined experience in
+                    archival research.
+                </p>
+                
+                <div class="centered-list" style="display: inline-flex; flex-direction: column; align-items: flex-start; gap: 1rem; text-align: left;">
+                    <div style="display: flex; align-items: center; gap: 1rem;">
+                        <i data-lucide="check-circle" style="color: var(--success);"></i>
+                        <span style="font-weight: 500;">50+ Years Combined Research Experience</span>
+                    </div>
+                    <div style="display: flex; align-items: center; gap: 1rem;">
+                        <i data-lucide="check-circle" style="color: var(--success);"></i>
+                        <span style="font-weight: 500;">Access to Global Records & Exclusive Archives</span>
+                    </div>
+                    <div style="display: flex; align-items: center; gap: 1rem;">
+                        <i data-lucide="check-circle" style="color: var(--success);"></i>
+                        <span style="font-weight: 500;">Certified Master Genealogists (ASG & BCG)</span>
+                    </div>
+                    <div style="display: flex; align-items: center; gap: 1rem;">
+                        <i data-lucide="check-circle" style="color: var(--success);"></i>
+                        <span style="font-weight: 500;">Rigorous Evidence Analysis & Historical Verification</span>
+                    </div>
+                </div>
+
+                <div style="margin-top: 3rem;">
+                    <a href="about.html" class="btn btn-primary">Our Full Story</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 4. Features Section (Step 7) -->
+    <section id="features">
+        <div class="container">
+            <div style="text-align: center; margin-bottom: 4rem;">
+                <h2 style="font-size: 2.5rem;">Why Choose Fam Tree?</h2>
+                <p>We provide more than just a family tree; we provide a connection to the past.</p>
+            </div>
+            <div class="grid grid-3">
+                <div class="card">
+                    <div
+                        style="width: 100%; height: 180px; border-radius: var(--border-radius); overflow: hidden; margin-bottom: 1.5rem;">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQBId6XuQ-1ZYczVH-W8gR7zwb1lmcl3g0XEQ&s"
+                            alt="Interactive Family Trees" style="width: 100%; height: 100%; object-fit: cover;">
+                    </div>
+                    <div style="margin-bottom: 1rem;"><i data-lucide="layout"
+                            style="width: 32px; height: 32px; color: var(--secondary-color);"></i></div>
+                    <h3>Interactive Family</h3>
+                    <p>Beautifully designed, digital family trees that you can share with your family instantly.</p>
+                </div>
+                <div class="card">
+                    <div
+                        style="width: 100%; height: 180px; border-radius: var(--border-radius); overflow: hidden; margin-bottom: 1.5rem;">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRkGci40p_dn0ZCUqzrojlYdhvk-2KkG0Jw3Q&s"
+                            alt="Privacy Guaranteed" style="width: 100%; height: 100%; object-fit: cover;">
+                    </div>
+                    <div style="margin-bottom: 1rem;"><i data-lucide="shield"
+                            style="width: 32px; height: 32px; color: var(--secondary-color);"></i></div>
+                    <h3>Privacy Guaranteed</h3>
+                    <p>Your data is encrypted and secure. You control who sees your family history details.</p>
+                </div>
+                <div class="card">
+                    <div
+                        style="width: 100%; height: 180px; border-radius: var(--border-radius); overflow: hidden; margin-bottom: 1.5rem;">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRRNCn7xjxA8JRIG6fFx0dMrOPbjpmGzodWLg&s"
+                            alt="Migration Mapping" style="width: 100%; height: 100%; object-fit: cover;">
+                    </div>
+                    <div style="margin-bottom: 1rem;"><i data-lucide="map"
+                            style="width: 32px; height: 32px; color: var(--secondary-color);"></i></div>
+                    <h3>Migration Mapping</h3>
+                    <p>Visualize the journey your ancestors took from their homeland to where you are today.</p>
+                </div>
+                <div class="card">
+    <div
+        style="width: 100%; height: 180px; border-radius: var(--border-radius); overflow: hidden; margin-bottom: 1.5rem;">
+        <img src="https://cdn.prod.website-files.com/5d4213aaa839ea4dd99840c4/69bb2b609eb6a21d52b551ac_36c445b8fc75cc836c0a0fb1c257f9bf_Trace%20-%20Website%20Home%20Genealogy%20Courses.png"
+            alt="Expert Genealogists" style="width: 100%; height: 100%; object-fit: cover;">
+    </div>
+    <div style="margin-bottom: 1rem;">
+        <i data-lucide="users"
+            style="width: 32px; height: 32px; color: var(--secondary-color);"></i>
+    </div>
+    <h3>Expert </h3>
+    <p>Our experienced researchers ensure accurate, well-documented lineage discoveries you can trust.</p>
+</div>
+
+<div class="card">
+    <div
+        style="width: 100%; height: 180px; border-radius: var(--border-radius); overflow: hidden; margin-bottom: 1.5rem;">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRTDAcuaHDPHxop4xpb36xUgG2jw1hkYfPNAQ&s"
+            alt="Historical Accuracy" style="width: 100%; height: 100%; object-fit: cover;">
+    </div>
+    <div style="margin-bottom: 1rem;">
+        <i data-lucide="check-circle"
+            style="width: 32px; height: 32px; color: var(--secondary-color);"></i>
+    </div>
+    <h3>Historical Accuracy</h3>
+    <p>Every detail is verified using authentic records to ensure your family history is reliable and precise.</p>
+</div>
+
+<div class="card">
+    <div
+        style="width: 100%; height: 180px; border-radius: var(--border-radius); overflow: hidden; margin-bottom: 1.5rem;">
+        <img src="https://edge.fscdn.org/assets/static/media/whatIsARecordImage.26b628647caf1705136908b1495634f8.svg"
+            alt="Global Records Access" style="width: 100%; height: 100%; object-fit: cover;">
+    </div>
+    <div style="margin-bottom: 1rem;">
+        <i data-lucide="globe"
+            style="width: 32px; height: 32px; color: var(--secondary-color);"></i>
+    </div>
+    <h3>Global Records</h3>
+    <p>We connect you with archives and records from around the world to uncover your complete heritage.</p>
+</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 5. Testimonials Section (Step 7) -->
+    <section id="testimonials" style="background-color: var(--bg-secondary);">
+        <div class="container">
+            <div style="text-align: center; margin-bottom: 4rem;">
+                <h2 style="font-size: 2.5rem;">What Our Clients Say</h2>
+                <p>Real stories from people who found their missing puzzle pieces.</p>
+            </div>
+            <div class="grid grid-3">
+                <div class="card">
+                    <p style="font-style: italic; margin-bottom: 1.5rem;">"I never knew my great-grandfather served in
+                        the navy until Fam Tree found his original service records in the archives!"</p>
+                    <div style="display: flex; flex-direction: column; align-items: center;">
+                        <div
+                            style="width: 60px; height: 60px; border-radius: 50%; overflow: hidden; margin-bottom: 0.5rem;">
+                            <img src="https://i.pravatar.cc/150?u=1" alt="User" style="width: 100%;">
+                        </div>
+                        <h4 style="margin: 0;">Eleanor Vance</h4>
+                        <span style="font-size: 0.8rem; color: var(--text-secondary);">History Teacher</span>
+                    </div>
+                </div>
+                <div class="card">
+                    <p style="font-style: italic; margin-bottom: 1.5rem;">"Friendly, professional, and thorough. They
+                        handled my complex international case with such expertise. Highly recommend!"</p>
+                    <div style="display: flex; flex-direction: column; align-items: center;">
+                        <div
+                            style="width: 60px; height: 60px; border-radius: 50%; overflow: hidden; margin-bottom: 0.5rem;">
+                            <img src="https://i.pravatar.cc/150?u=2" alt="User" style="width: 100%;">
+                        </div>
+                        <h4 style="margin: 0;">Jonathan Miller</h4>
+                        <span style="font-size: 0.8rem; color: var(--text-secondary);">Retired Engineer</span>
+                    </div>
+                </div>
+                <div class="card">
+                    <p style="font-style: italic; margin-bottom: 1.5rem;">"The interactive dashboard makes it so easy to
+                        follow the progress. I love seeing the documents pop up as they are found."</p>
+                    <div style="display: flex; flex-direction: column; align-items: center;">
+                        <div
+                            style="width: 60px; height: 60px; border-radius: 50%; overflow: hidden; margin-bottom: 0.5rem;">
+                            <img src="https://i.pravatar.cc/150?u=3" alt="User" style="width: 100%;">
+                        </div>
+                        <h4 style="margin: 0;">Sarah Jenkins</h4>
+                        <span style="font-size: 0.8rem; color: var(--text-secondary);">Business Owner</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 6. CTA Banner (Step 7) -->
+    <section id="cta" style="padding: 0;">
+        <div class="container"
+            style="background-color: var(--primary-color); border-radius: var(--border-radius); padding: 4rem; color: #fff; text-align: center; margin-bottom: -40px; position: relative; z-index: 2;">
+            <h2 style="font-size: 2.5rem; color: #fff;">Start Your Journey Today</h2>
+            <p style="color: #f0f0f0; margin-bottom: 2.5rem; max-width: 600px; margin-left: auto; margin-right: auto;">
+                Don't let your family's history fade into obscurity. Secure your heritage for future generations now.
+            </p>
+            <div style="display: flex; gap: 1.5rem; justify-content: center; flex-wrap: wrap;">
+                <a href="contact.html" class="btn btn-secondary" style="min-width: 220px;">Request a Quote</a>
+                <a href="about.html" class="btn btn-primary"
+                    style="background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.3); min-width: 220px;">Download
+                    Report</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer (Step 15) -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div>
+                    <a href="index.html" class="logo" style="margin-bottom: 1rem;">
+                        <i data-lucide="tree-pine"></i>
+                        <span>Fam Tree</span>
+                    </a>
+                    <p>Making genealogy professional, accessible, and fascinating for everyone.</p>
+                    <div class="footer-social">
+                        <a href="#" class="social-link social-fb" aria-label="Facebook"><span>F</span></a>
+                        <a href="#" class="social-link social-tw" aria-label="X"><span>X</span></a>
+                        <a href="#" class="social-link social-ig" aria-label="Instagram"><span>I</span></a>
+                        <a href="#" class="social-link social-ln" aria-label="LinkedIn"><span>L</span></a>
+                    </div>
+                </div>
+                <div>
+                    <h4>Quick Links</h4>
+                    <ul style="list-style: none; display: flex; flex-direction: column; gap: 0.5rem;">
+                        <li><a href="index.html" style="text-decoration: none; color: var(--text-secondary);">Home</a>
+                        </li>
+                        <li><a href="services.html"
+                                style="text-decoration: none; color: var(--text-secondary);">Services</a></li>
+                        <li><a href="about.html" style="text-decoration: none; color: var(--text-secondary);">About
+                                Us</a></li>
+                        <li><a href="pricing.html"
+                                style="text-decoration: none; color: var(--text-secondary);">Pricing</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4>Resources</h4>
+                    <ul style="list-style: none; display: flex; flex-direction: column; gap: 0.5rem;">
+                        <li><a href="#" style="text-decoration: none; color: var(--text-secondary);">Success Stories</a>
+                        </li>
+                        <li><a href="#" style="text-decoration: none; color: var(--text-secondary);">Genealogy Blog</a>
+                        </li>
+                        <li><a href="#" style="text-decoration: none; color: var(--text-secondary);">Archive Access</a>
+                        </li>
+                        <li><a href="#" style="text-decoration: none; color: var(--text-secondary);">Client Support</a>
+                        </li>
+                    </ul>
+                </div>
+                <div>
+                    <h4>Contact</h4>
+                    <ul style="list-style: none; display: flex; flex-direction: column; gap: 0.5rem;">
+                        <li style="display: flex; gap: 0.5rem; color: var(--text-secondary);"><i data-lucide="mail"></i>
+                            info@Fam Tree.com</li>
+                        <li style="display: flex; gap: 0.5rem; color: var(--text-secondary);"><i
+                                data-lucide="phone"></i> +1 (800) ROOTS-4U</li>
+                        <li style="display: flex; gap: 0.5rem; color: var(--text-secondary);"><i
+                                data-lucide="map-pin"></i> 123 Heritage Lane, Boston, MA</li>
+                    </ul>
+                </div>
+            </div>
+            <div style="border-top: 1px solid var(--border-color); padding-top: 2rem; text-align: center;">
+                <p>&copy; 2026 Fam Tree Genealogy Services. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="js/main.js"></script>
+    <script>
+        lucide.createIcons();
+    </script>
+</body>
+
+</html>
