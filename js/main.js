@@ -31,19 +31,41 @@ rtlToggles.forEach(toggle => {
     });
 });
 
-// Sticky Header Logic
-const header = id => document.getElementById(id);
-const mainHeader = header('main-header');
+// Sticky Header and Back to Top Logic
+const mainHeader = document.getElementById('main-header');
+const backToTopBtn = document.createElement('button');
+backToTopBtn.innerHTML = '<i data-lucide="arrow-up"></i>';
+backToTopBtn.className = 'back-to-top';
+backToTopBtn.setAttribute('aria-label', 'Back to Top');
+document.body.appendChild(backToTopBtn);
+
+// Re-initialize lucide for the new button
+if (window.lucide) {
+    lucide.createIcons();
+}
+
+backToTopBtn.addEventListener('click', () => {
+    window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+    });
+});
 
 window.addEventListener('scroll', () => {
+    // Header Scroll Logic
     if (window.scrollY > 50) {
         mainHeader.style.padding = '5px 0';
         mainHeader.style.boxShadow = 'var(--shadow-md)';
-        mainHeader.style.background = 'var(--header-bg)';
     } else {
-        mainHeader.style.padding = '0';
+        mainHeader.style.padding = '10px 0';
         mainHeader.style.boxShadow = 'none';
-        mainHeader.style.background = 'transparent';
+    }
+
+    // Back to Top Button Logic
+    if (window.scrollY > 500) {
+        backToTopBtn.classList.add('visible');
+    } else {
+        backToTopBtn.classList.remove('visible');
     }
 });
 
