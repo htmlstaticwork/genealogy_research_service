@@ -1,0 +1,822 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Genealogy Research Service | Documentation</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        /* ==================================================
+           CSS VARIABLES & RESET
+           ================================================== */
+        :root {
+            --bg-dark: #0f172a;
+            --bg-sidebar: #1e293b;
+            --bg-card: #1e293b;
+            --primary: #38bdf8;
+            --primary-hover: #0ea5e9;
+            --text-main: #f8fafc;
+            --text-muted: #94a3b8;
+            --border: #334155;
+            --sidebar-width: 280px;
+            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-dark);
+            color: var(--text-main);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, h4 {
+            font-family: 'Outfit', sans-serif;
+            margin-bottom: 1rem;
+            color: var(--text-main);
+        }
+
+        a {
+            text-decoration: none;
+            color: var(--primary);
+            transition: var(--transition);
+        }
+
+        a:hover {
+            color: var(--primary-hover);
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            border-radius: 8px;
+            margin: 1.5rem 0;
+            border: 1px solid var(--border);
+        }
+
+        /* ==================================================
+           LAYOUT - SIDEBAR & MAIN
+           ================================================== */
+        .app-container {
+            display: flex;
+            min-height: 100vh;
+        }
+
+        /* SIDEBAR (STRICT BREAKPOINT RULES) */
+        .sidebar {
+            width: var(--sidebar-width);
+            background-color: var(--bg-sidebar);
+            height: 100vh;
+            border-right: 1px solid var(--border);
+            z-index: 1000;
+            display: flex;
+            flex-direction: column;
+            transition: var(--transition);
+        }
+
+        .sidebar-header {
+            padding: 2rem 1.5rem;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .sidebar-logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .sidebar-nav {
+            flex: 1;
+            padding: 1.5rem 0;
+            overflow-y: auto;
+        }
+
+        .nav-link {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            padding: 0.75rem 1.5rem;
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            transition: var(--transition);
+        }
+
+        .nav-link:hover, .nav-link.active {
+            color: var(--text-main);
+            background-color: rgba(56, 189, 248, 0.1);
+            border-right: 3px solid var(--primary);
+        }
+
+        /* MAIN CONTENT */
+        .main-content {
+            flex: 1;
+            padding: 2rem;
+            max-width: 100%;
+            overflow-x: hidden;
+            margin-left: 0; /* Default for mobile/tablet */
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        /* PROGRESS BAR */
+        .progress-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: transparent;
+            z-index: 2000;
+        }
+
+        .progress-bar {
+            height: 100%;
+            background: var(--primary);
+            width: 0%;
+        }
+
+        /* ==================================================
+           COMPONENTS
+           ================================================== */
+        .card {
+            background-color: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            width: 100%;
+            word-wrap: break-word;
+            overflow-wrap: break-word;
+        }
+
+        .section-header {
+            margin-bottom: 3rem;
+            padding-bottom: 1rem;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+
+        .badge {
+            display: inline-block;
+            padding: 0.25rem 0.75rem;
+            border-radius: 999px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            background: rgba(56, 189, 248, 0.1);
+            color: var(--primary);
+            margin-bottom: 1rem;
+        }
+
+        code {
+            background: #000;
+            color: #ec4899;
+            padding: 0.2rem 0.4rem;
+            border-radius: 4px;
+            font-size: 0.9rem;
+        }
+
+        pre {
+            background: #0d1117;
+            padding: 1.5rem;
+            border-radius: 8px;
+            overflow-x: auto;
+            margin: 1rem 0;
+            border: 1px solid var(--border);
+        }
+
+        pre code {
+            background: transparent;
+            color: #9cdcfe;
+            padding: 0;
+        }
+
+        .instruction-step {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .step-number {
+            flex-shrink: 0;
+            width: 32px;
+            height: 32px;
+            background: var(--primary);
+            color: var(--bg-dark);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 0.9rem;
+        }
+
+        .placeholder-image {
+            background: #334155;
+            height: 300px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--text-muted);
+            border-radius: 8px;
+            margin: 1.5rem 0;
+            text-align: center;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        /* GRID SYSTEM */
+        .grid {
+            display: grid;
+            gap: 1.5rem;
+            margin: 1.5rem 0;
+        }
+
+        /* HAMBURGER & OVERLAY */
+        .hamburger {
+            position: fixed;
+            top: 1.5rem;
+            right: 1.5rem;
+            z-index: 1100;
+            background: var(--primary);
+            color: var(--bg-dark);
+            border: none;
+            width: 45px;
+            height: 45px;
+            border-radius: 8px;
+            cursor: pointer;
+            display: none; /* Desktop default */
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+        }
+
+        .overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background: rgba(0,0,0,0.7);
+            backdrop-filter: blur(4px);
+            z-index: 999;
+            display: none;
+        }
+
+        /* EXPORT BUTTON */
+        .export-btn {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: var(--primary);
+            color: var(--bg-dark);
+            padding: 0.75rem 1.5rem;
+            border-radius: 8px;
+            font-weight: 600;
+            border: none;
+            cursor: pointer;
+            margin-top: 2rem;
+            transition: var(--transition);
+        }
+
+        .export-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(56, 189, 248, 0.3);
+        }
+
+        /* ==================================================
+           RESPONSIVE RULES (STRICTLY REQUIRED)
+           ================================================== */
+
+        /* Mobile (360px+) & Tablet (768px+) */
+        @media (max-width: 1023px) {
+            .sidebar {
+                transform: translateX(-100%);
+                position: fixed;
+                top: 0;
+                left: 0;
+            }
+
+            .sidebar.active {
+                transform: translateX(0);
+            }
+
+            .main-content {
+                margin-left: 0 !important;
+                padding: 1.5rem;
+            }
+
+            .hamburger {
+                display: flex;
+            }
+
+            .grid {
+                grid-template-columns: 1fr;
+            }
+
+            /* Tablet adjustment */
+            @media (min-width: 768px) {
+                .grid {
+                    grid-template-columns: 1fr 1fr;
+                }
+            }
+        }
+
+        /* Desktop (1024px+) */
+        @media (min-width: 1024px) {
+            .sidebar {
+                transform: translateX(0);
+                position: fixed;
+            }
+
+            .main-content {
+                margin-left: var(--sidebar-width);
+            }
+
+            .hamburger {
+                display: none !important;
+            }
+
+            .grid {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .grid-3 {
+                grid-template-columns: 1fr 1fr 1fr;
+            }
+        }
+
+        /* Large Desktop (1440px+) */
+        @media (min-width: 1440px) {
+            .container {
+                max-width: 1100px;
+            }
+        }
+
+        /* ==================================================
+           PRINT STYLES
+           ================================================== */
+        @media print {
+            .sidebar, .hamburger, .progress-container, .export-btn, .overlay {
+                display: none !important;
+            }
+            .main-content {
+                margin: 0 !important;
+                padding: 0 !important;
+                background: #fff !important;
+                color: #000 !important;
+            }
+            body {
+                background: #fff !important;
+            }
+            .card {
+                background: #fff !important;
+                border: 1px solid #ddd !important;
+                break-inside: avoid;
+            }
+            h1, h2, h3, h4, p, a {
+                color: #000 !important;
+            }
+            pre {
+                background: #f4f4f4 !important;
+                border: 1px solid #ccc !important;
+                color: #000 !important;
+            }
+            .badge {
+                border: 1px solid #000;
+                color: #000;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Progress Tracking Bar -->
+    <div class="progress-container">
+        <div class="progress-bar" id="progressBar"></div>
+    </div>
+
+    <!-- Mobile Navigation Trigger -->
+    <button class="hamburger" id="hamburgerBtn" aria-label="Toggle Menu">
+        <i data-lucide="menu"></i>
+    </button>
+
+    <!-- Sidebar Overlay -->
+    <div class="overlay" id="overlay"></div>
+
+    <div class="app-container">
+        
+        <!-- ================= STICKY SIDEBAR ================= -->
+        <aside class="sidebar" id="sidebar">
+            <div class="sidebar-header">
+                <div class="sidebar-logo">
+                    <i data-lucide="database"></i>
+                    <span>GE-GENEALOGY</span>
+                </div>
+            </div>
+            <nav class="sidebar-nav">
+                <ul>
+                    <li><a href="#introduction" class="nav-link active"><i data-lucide="home"></i> Introduction</a></li>
+                    <li><a href="#installation" class="nav-link"><i data-lucide="download"></i> Installation</a></li>
+                    <li><a href="#customization" class="nav-link"><i data-lucide="edit-3"></i> Customization</a></li>
+                    <li><a href="#structure" class="nav-link"><i data-lucide="layers"></i> Page Structure</a></li>
+                    <li><a href="#credits" class="nav-link"><i data-lucide="star"></i> Credits</a></li>
+                    <li><a href="#changelog" class="nav-link"><i data-lucide="activity"></i> Changelog</a></li>
+                    <li><a href="#support" class="nav-link"><i data-lucide="help-circle"></i> Support</a></li>
+                </ul>
+                <div style="padding: 1.5rem;">
+                    <button class="export-btn" onclick="window.print()">
+                        <i data-lucide="printer"></i> Export as PDF
+                    </button>
+                </div>
+            </nav>
+        </aside>
+
+        <!-- ================= MAIN CONTENT ================= -->
+        <main class="main-content">
+            <div class="container">
+
+                <!-- INTRODUCTION -->
+                <section id="introduction" class="section-header">
+                    <span class="badge">Documentation v1.2</span>
+                    <h1 class="section-title">Genealogy Research Service</h1>
+                    <p class="text-muted">Welcome to the complete documentation guide for the Genealogy Research Service website. This professional template is designed for ancestry research, historical tracking, and family tree archival services.</p>
+                </section>
+
+                <!-- INSTALLATION -->
+                <section id="installation" style="margin-bottom: 5rem;">
+                    <h2 class="section-title"><i data-lucide="download-cloud"></i> Installation Guide</h2>
+                    <div class="card">
+                        <div class="instruction-step">
+                            <div class="step-number">1</div>
+                            <div>
+                                <h4>Download & Extract</h4>
+                                <p class="text-muted">Download the template package and extract it to your local machine. You will see folders for CSS, JS, and all core HTML pages.</p>
+                            </div>
+                        </div>
+
+                        <div class="instruction-step">
+                            <div class="step-number">2</div>
+                            <div>
+                                <h4>Folder Structure</h4>
+                                <p class="text-muted">The project is organized logically for easy maintenance:</p>
+                                <pre><code>/genealogy-service/
+├── css/ (All stylesheets)
+├── js/ (Interactivity scripts)
+├── documentation/ (This guide)
+├── images/ (Asset library)
+├── index.html (Main Landing Page)
+├── home2.html (Variant Landing Page)
+├── about.html (Company Information)
+├── services.html (Service Packages)
+├── contact.html (Booking & Inquiries)
+├── dashboard.html (User Portal)
+└── pricing.html (Cost Breakdown)</code></pre>
+                            </div>
+                        </div>
+
+                        <div class="instruction-step">
+                            <div class="step-number">3</div>
+                            <div>
+                                <h4>Local Setup (VS Code)</h4>
+                                <p class="text-muted">Open the folder in <strong>VS Code</strong>. For the best experience, install the <strong>Live Server</strong> extension to preview changes in real-time.</p>
+                            </div>
+                        </div>
+
+                        <div class="instruction-step">
+                            <div class="step-number">4</div>
+                            <div>
+                                <h4>Hosting & Deployment</h4>
+                                <p class="text-muted">This is a static HTML/CSS/JS site. You can host it on:</p>
+                                <ul style="list-style: disc; margin-left: 1.5rem; color: #94a3b8; margin-top: 0.5rem;">
+                                    <li>GitHub Pages</li>
+                                    <li>Vercel / Netlify</li>
+                                    <li>CPanel via FTP</li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <div style="background: rgba(234, 179, 8, 0.1); border-left: 4px solid #eab308; padding: 1rem; margin-top: 1rem; border-radius: 4px;">
+                            <p style="color: #eab308; font-size: 0.9rem;"><strong><i data-lucide="alert-triangle"></i> Pro Tip:</strong> Always keep a backup of the original `css/` files before making heavy customizations.</p>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- CUSTOMIZATION -->
+                <section id="customization" style="margin-bottom: 5rem;">
+                    <h2 class="section-title"><i data-lucide="sliders"></i> Customization Guide</h2>
+                    <div class="card">
+                        <h3>Colors (CSS Variables)</h3>
+                        <p class="text-muted">You can change the entire theme by modifying the CSS variables in the root of your stylesheet:</p>
+                        <pre><code>:root {
+  --primary: #38bdf8;  /* Change this for brand color */
+  --bg-dark: #0f172a;  /* Main background */
+  --accent: #ec4899;   /* Secondary accent */
+}</code></pre>
+
+                        <h3>Typography</h3>
+                        <p class="text-muted">The site uses <strong>Inter</strong> and <strong>Outfit</strong> from Google Fonts. To change fonts, update the link in the `<head>` of your HTML files and update the font-family in CSS.</p>
+                        
+                        <div class="grid">
+                            <div style="border: 1px dashed var(--border); padding: 1rem; border-radius: 8px;">
+                                <p style="font-size: 0.8rem; color: var(--primary);">/* BEFORE */</p>
+                                <p>font-family: 'Inter', sans-serif;</p>
+                            </div>
+                            <div style="border: 1px dashed var(--border); padding: 1rem; border-radius: 8px;">
+                                <p style="font-size: 0.8rem; color: #22c55e;">/* AFTER */</p>
+                                <p>font-family: 'Roboto', sans-serif;</p>
+                            </div>
+                        </div>
+
+                        <h3>Image Placeholders</h3>
+                        <p class="text-muted">All images are located in the `/images` folder. Ensure your new images maintain the original aspect ratios for the best layout results.</p>
+                        <p><strong>Recommended Sizes:</strong></p>
+                        <ul style="list-style: disc; margin-left: 1.5rem; color: #94a3b8;">
+                            <li>Hero Images: 1920x1080px</li>
+                            <li>Feature Tiles: 800x600px</li>
+                            <li>Team Avatars: 400x400px</li>
+                        </ul>
+
+                        <!-- TODO Markers -->
+                        <div style="margin-top: 2rem; border-top: 1px solid var(--border); padding-top: 1.5rem;">
+                            <h4 style="color: var(--primary);">TODO markers in Code:</h4>
+                            <p class="text-muted">Search for <code><!-- [TODO] --></code> in the HTML files to find sections meant for quick content updates.</p>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- PAGE STRUCTURE -->
+                <section id="structure" style="margin-bottom: 5rem;">
+                    <h2 class="section-title"><i data-lucide="codesandbox"></i> Page Structure</h2>
+                    
+                    <!-- HOME PAGE -->
+                    <div class="card">
+                        <span class="badge">Primary</span>
+                        <h3>Home Page (Home 1)</h3>
+                        <div class="placeholder-image">
+                            <i data-lucide="image" size="48"></i>
+                            <p>[ Screenshot: Home Page ]</p>
+                            <p style="font-size: 0.8rem;">Path: /documentation/images/home-preview.jpg</p>
+                        </div>
+                        <p class="text-muted">The landing page designed to convert visitors. Sections include:</p>
+                        <div class="grid">
+                            <ul style="color: #94a3b8;">
+                                <li>✨ Hero Header with CTA</li>
+                                <li>✨ Core Services Overview</li>
+                                <li>✨ Success Stories</li>
+                            </ul>
+                            <ul style="color: #94a3b8;">
+                                <li>✨ Interactive Family Tree Preview</li>
+                                <li>✨ Client Testimonials</li>
+                                <li>✨ Footer with Navigation</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- ABOUT PAGE -->
+                    <div class="card">
+                        <span class="badge">Static</span>
+                        <h3>About & History</h3>
+                        <div class="placeholder-image">
+                            <i data-lucide="image" size="48"></i>
+                            <p>[ Screenshot: About Page ]</p>
+                        </div>
+                        <p class="text-muted">Detailed company profile, mission statement, and researcher credentials.</p>
+                    </div>
+
+                    <!-- SERVICES -->
+                    <div class="card">
+                        <span class="badge">Interactive</span>
+                        <h3>Research Services</h3>
+                        <div class="placeholder-image">
+                            <i data-lucide="image" size="48"></i>
+                            <p>[ Screenshot: Services Page ]</p>
+                        </div>
+                        <p class="text-muted">Tiered pricing tables and detailed service descriptions for record searching and archival work.</p>
+                    </div>
+
+                    <!-- DASHBOARD -->
+                    <div class="card" style="border: 1px solid var(--primary);">
+                        <span class="badge" style="background: var(--primary); color: #000;">Premium</span>
+                        <h3>Client Dashboard</h3>
+                        <div class="placeholder-image">
+                            <i data-lucide="image" size="48"></i>
+                            <p>[ Screenshot: Dashboard ]</p>
+                        </div>
+                        <p class="text-muted">A private portal where clients can track research progress, download documents, and message their assigned genealogist.</p>
+                    </div>
+                </section>
+
+                <!-- CREDITS -->
+                <section id="credits" style="margin-bottom: 5rem;">
+                    <h2 class="section-title"><i data-lucide="award"></i> Credits</h2>
+                    <div class="card">
+                        <div class="grid">
+                            <div>
+                                <h4>Typography</h4>
+                                <ul style="color:#94a3b8">
+                                    <li>Inter (Google Fonts)</li>
+                                    <li>Outfit (Google Fonts)</li>
+                                </ul>
+                            </div>
+                            <div>
+                                <h4>Iconography</h4>
+                                <ul style="color:#94a3b8">
+                                    <li>Lucide Icons</li>
+                                    <li>FontAwesome (v6.0)</li>
+                                </ul>
+                            </div>
+                            <div>
+                                <h4>Assets</h4>
+                                <ul style="color:#94a3b8">
+                                    <li>Unsplash (Images)</li>
+                                    <li>Pexels (Stock Video)</li>
+                                </ul>
+                            </div>
+                            <div>
+                                <h4>Frameworks</h4>
+                                <ul style="color:#94a3b8">
+                                    <li>Vanilla JS (Lite)</li>
+                                    <li>Modern CSS Flexbox/Grid</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <p style="margin-top: 1rem; font-size: 0.8rem; color: var(--text-muted);">Commercial use allowed under standard license terms.</p>
+                    </div>
+                </section>
+
+                <!-- CHANGELOG -->
+                <section id="changelog" style="margin-bottom: 5rem;">
+                    <h2 class="section-title"><i data-lucide="history"></i> Changelog</h2>
+                    <div class="card">
+                        <div style="margin-bottom: 1.5rem;">
+                            <h4 style="color: var(--primary);">v1.2 – Latest Update</h4>
+                            <p class="text-muted">Released April 2026</p>
+                            <ul style="list-style: disc; margin-left:1.5rem; color:#94a3b8">
+                                <li>Added Dashboard layout functionality</li>
+                                <li>Improved mobile sidebar navigation</li>
+                                <li>Optimized image loading performance</li>
+                            </ul>
+                        </div>
+                        <div style="margin-bottom: 1.5rem;">
+                            <h4 style="color: var(--text-main);">v1.1</h4>
+                            <p class="text-muted">Released March 2026</p>
+                            <ul style="list-style: disc; margin-left:1.5rem; color:#94a3b8">
+                                <li>Fixed responsiveness on 360px devices</li>
+                                <li>Updated Lucide icon library</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4 style="color: var(--text-main);">v1.0</h4>
+                            <p class="text-muted">Released February 2026</p>
+                            <ul style="list-style: disc; margin-left:1.5rem; color:#94a3b8">
+                                <li>Initial Template Launch</li>
+                            </ul>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- SUPPORT -->
+                <section id="support" style="margin-bottom: 5rem;">
+                    <h2 class="section-title"><i data-lucide="message-square"></i> Support</h2>
+                    <div class="card">
+                        <p class="text-muted">Facing issues? We're here to help you get your genealogy business online.</p>
+                        
+                        <div class="grid" style="margin-top: 1.5rem;">
+                            <div style="background: rgba(255,255,255,0.03); padding: 1.5rem; border-radius: 8px;">
+                                <h4 style="color: var(--primary);">Contact Email</h4>
+                                <p>support@genealogy-service.com</p>
+                                <p style="font-size: 0.8rem; color: var(--text-muted);">Response time: 24-48 hours</p>
+                            </div>
+                            <div style="background: rgba(255,255,255,0.03); padding: 1.5rem; border-radius: 8px;">
+                                <h4 style="color: var(--primary);">Helpful Details</h4>
+                                <ul style="font-size: 0.8rem; color: var(--text-muted); list-style: circle; margin-left: 1rem;">
+                                    <li>Order Number</li>
+                                    <li>Browser Version</li>
+                                    <li>Description of Issue</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div style="margin-top: 2rem;">
+                            <h4>Troubleshooting FAQ</h4>
+                            <br>
+                            <div style="border-bottom: 1px solid var(--border); padding-bottom: 1rem; margin-bottom: 1rem;">
+                                <p><strong>Q: Layout is breaking on small screens?</strong></p>
+                                <p class="text-muted">A: Ensure you have the <code>meta viewport</code> tag in your head and that no fixed-width CSS elements were added.</p>
+                            </div>
+                            <div style="border-bottom: 1px solid var(--border); padding-bottom: 1rem; margin-bottom: 1rem;">
+                                <p><strong>Q: Images are not loading?</strong></p>
+                                <p class="text-muted">A: Verify the path in your code. Are images in <code>/images</code> folder? Remember, file names are case-sensitive.</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Footer -->
+                <footer style="text-align: center; color: var(--text-muted); padding: 3rem 0;">
+                    <p>&copy; 2026 Genealogy Research Service. All Rights Reserved.</p>
+                </footer>
+
+            </div>
+        </main>
+    </div>
+
+    <!-- ================= JAVASCRIPT LOGIC ================= -->
+    <script>
+        // Initialize Lucide Icons
+        lucide.createIcons();
+
+        // DOM Elements
+        const sidebar = document.getElementById('sidebar');
+        const hamburgerBtn = document.getElementById('hamburgerBtn');
+        const overlay = document.getElementById('overlay');
+        const navLinks = document.querySelectorAll('.nav-link');
+        const progressBar = document.getElementById('progressBar');
+        const sections = document.querySelectorAll('section');
+
+        // Toggle sidebar (mobile & tablet only)
+        function toggleSidebar() {
+            sidebar.classList.toggle('active');
+            overlay.style.display = sidebar.classList.contains('active') ? 'block' : 'none';
+        }
+
+        hamburgerBtn.addEventListener('click', toggleSidebar);
+        overlay.addEventListener('click', toggleSidebar);
+
+        // Close sidebar when clicking a link (mobile only)
+        navLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                if (window.innerWidth < 1024) {
+                    toggleSidebar();
+                }
+            });
+        });
+
+        // Progress Tracking Bar
+        window.addEventListener('scroll', () => {
+            const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+            const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            const scrolled = (winScroll / height) * 100;
+            progressBar.style.width = scrolled + "%";
+        });
+
+        // Scroll Spy (Active Section Highlight)
+        window.addEventListener('scroll', () => {
+            let current = "";
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                if (pageYOffset >= (sectionTop - 150)) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href').includes(current)) {
+                    link.classList.add('active');
+                }
+            });
+        });
+
+        // Reset sidebar on resize (fix for switching landscape/portrait)
+        window.addEventListener('resize', () => {
+            if (window.innerWidth >= 1024) {
+                sidebar.classList.remove('active');
+                overlay.style.display = 'none';
+            }
+        });
+
+        // [TODO] Add custom documentation scripts here
+    </script>
+</body>
+</html>
