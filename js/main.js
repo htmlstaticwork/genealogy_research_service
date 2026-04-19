@@ -87,8 +87,10 @@ window.addEventListener('DOMContentLoaded', () => {
     
     if (savedTheme) {
         body.setAttribute('data-theme', savedTheme);
-        themeIcon.setAttribute('data-lucide', savedTheme === 'dark' ? 'sun' : 'moon');
-        lucide.createIcons();
+        document.querySelectorAll('.theme-toggle i').forEach(icon => {
+            icon.setAttribute('data-lucide', savedTheme === 'dark' ? 'sun' : 'moon');
+        });
+        if (window.lucide) lucide.createIcons();
     }
     
     if (savedDir) {

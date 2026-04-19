@@ -4,11 +4,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Create Account | Fam Tree</title>
+    <title>Create Account | Genealogy</title>
     <!-- Favicon -->
-    <link rel="icon" type="image/x-icon" href="https://lucide.dev/favicon.ico">
+    <link rel="icon" type="image/x-icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 24 24%22 fill=%22none%22 stroke=%22%231b4332%22 stroke-width=%222%22 stroke-linecap=%22round%22 stroke-linejoin=%22round%22><path d=%22M12 2l-7 7h4l-5 5h6l-4 4h10l-4-4h6l-5-5h4l-7-7z%22/><path d=%22M12 18v4%22/></svg>">
     <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet">
     <!-- CSS -->
     <link rel="stylesheet" href="css/style.css">
     <!-- Lucide Icons -->
@@ -17,10 +17,12 @@
         .auth-container {
             min-height: 100vh;
             display: flex;
+            flex-direction: column;
             align-items: center;
             justify-content: center;
-            padding: 20px;
+            padding: 2rem 1.5rem;
             background: var(--bg-secondary);
+            gap: 1rem;
         }
 
         .auth-card {
@@ -84,16 +86,17 @@
         }
 
         .auth-controls {
-            position: absolute;
-            top: 1rem;
-            right: 1rem;
+            align-self: flex-end;
             display: flex;
-            gap: 0.5rem;
+            gap: 1rem;
+            z-index: 2000;
+            width: 100%;
+            max-width: 450px;
+            justify-content: flex-end;
         }
 
         [dir="rtl"] .auth-controls {
-            left: 1rem;
-            right: auto;
+            justify-content: flex-start;
         }
 
         .social-auth {
@@ -128,20 +131,20 @@
 <body data-theme="light">
 
     <div class="auth-container">
+        <div class="auth-controls">
+            <button class="icon-btn theme-toggle"  aria-label="Toggle Dark Mode"><i
+                    data-lucide="moon"></i></button>
+            <button class="icon-btn rtl-toggle"  aria-label="Toggle RTL Mode"><span style="font-weight: 800; font-size: 0.75rem;">RTL</span></button>
+        </div>
+
         <div class="auth-card">
-            <div class="auth-controls">
-                <button class="icon-btn theme-toggle" style="padding: 0.3rem;" aria-label="Toggle Dark Mode"><i
-                        data-lucide="moon"></i></button>
-                <button class="icon-btn rtl-toggle" style="padding: 0.3rem;" aria-label="Toggle RTL Mode"><i
-                        data-lucide="languages"></i></button>
-            </div>
 
             <div class="auth-logo">
-                <a href="index.html" class="logo" style="justify-content: center; font-size: 1.8rem; margin-bottom: 0.5rem;">
-                    <i data-lucide="tree-pine" style="width: 32px; height: 32px;"></i>
-                    <span>Fam Tree</span>
+                <a href="index.html" class="logo" style="justify-content: center;">
+                    <i data-lucide="tree-pine" ></i>
+                    <span>Genealogy</span>
                 </a>
-                <h2 style="margin: 0; font-size: 1.5rem;">Join Fam Tree</h2>
+                <h2 style="margin: 0; font-size: 1.2rem;">Join Genealogy</h2>
                 <p>Start your historical journey today</p>
             </div>
 
@@ -170,9 +173,9 @@
                     <input type="password" id="password-input" placeholder="" required>
                     <i data-lucide="eye" class="eye-toggle" id="eye-toggle"></i>
                 </div>
-                <div style="font-size: 0.8rem; color: var(--text-secondary);">
-                    By signing up, you agree to our <a href="#" style="color: var(--secondary-color);">Terms of
-                        Service</a> and <a href="#" style="color: var(--secondary-color);">Privacy Policy</a>.
+                <div style="display: flex; align-items: flex-start; gap: 0.8rem; font-size: 0.85rem; color: var(--text-secondary);">
+                    <input type="checkbox" id="terms" required style="width: 18px; height: 18px; cursor: pointer; accent-color: var(--secondary-color); margin-top: 2px;">
+                    <label for="terms" style="cursor: pointer;">By signing up, you agree to our <a href="#" style="color: var(--secondary-color); font-weight: 600;">Terms of Service</a> and <a href="#" style="color: var(--secondary-color); font-weight: 600;">Privacy Policy</a>.</label>
                 </div>
 
                 <button type="submit" class="btn btn-primary" style="width: 100%; justify-content: center;">Create
@@ -232,3 +235,4 @@
 </body>
 
 </html>
+
