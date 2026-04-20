@@ -558,6 +558,26 @@ footer {
     margin-bottom: 1.5rem;
 }
 
+@media (min-width: 769px) and (max-width: 1024px) {
+    .footer-grid {
+        grid-template-columns: repeat(4, 1fr) !important;
+        gap: 1.5rem !important;
+    }
+
+    .social-link {
+        width: 38px !important;
+        height: 38px !important;
+    }
+
+    .social-link i,
+    .social-link span,
+    .social-link svg {
+        font-size: 1rem !important;
+        width: 18px !important;
+        height: 18px !important;
+    }
+}
+
 @media (max-width: 1024px) {
     .contact-grid {
         gap: 2rem;

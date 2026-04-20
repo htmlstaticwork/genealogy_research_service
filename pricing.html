@@ -46,6 +46,41 @@
             flex-direction: column;
             gap: 0.8rem;
         }
+
+        /* FAQ Accordion Styles */
+        .faq-item {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: var(--border-radius);
+            margin-bottom: 1rem;
+            overflow: hidden;
+            transition: var(--transition);
+        }
+        .faq-question {
+            padding: 1.5rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            cursor: pointer;
+            font-weight: 700;
+            color: var(--primary-color);
+        }
+        [data-theme="dark"] .faq-question { color: var(--secondary-color); }
+        .faq-answer {
+            padding: 0 2rem;
+            max-height: 0;
+            overflow: hidden;
+            transition: all 0.4s ease;
+            color: var(--text-secondary);
+            line-height: 1.6;
+        }
+        .faq-item.active .faq-answer {
+            padding: 0 2rem 1.5rem;
+            max-height: 200px;
+        }
+        .faq-item.active .faq-question i {
+            transform: rotate(180deg);
+        }
     </style>
 </head>
 <body data-theme="light">
@@ -151,6 +186,57 @@
         </div>
     </section>
 
+    <section id="faq" style="padding: 100px 0; background: var(--bg-secondary);">
+        <div class="container">
+            <div style="text-align: center; margin-bottom: 4rem;">
+                <h2 style="font-size: 2.5rem;">Discovery <span style="color: var(--secondary-color);">FAQs</span></h2>
+                <p>Common questions about our professional research process.</p>
+            </div>
+            
+            <div style="max-width: 800px; margin: 0 auto;">
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>How long does a typical research project take?</span>
+                        <i data-lucide="chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Basic packages typically take 4-6 weeks, while our Legacy Professional plan can span 3-6 months depending on the complexity and archival accessibility of your unique family history.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>Do you guarantee 100% accuracy in your findings?</span>
+                        <i data-lucide="chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>We adhere to the Genealogical Proof Standard (GPS). Every finding is backed by cited primary sources. If a connection cannot be proven beyond reasonable doubt, we state it clearly as a lead rather than a fact.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>Can you investigate records in non-English speaking countries?</span>
+                        <i data-lucide="chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Yes. Our global team has specialists fluent in over 12 languages and expert knowledge of international archival systems in Europe, Asia, and the Americas.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>What happens if no records are found?</span>
+                        <i data-lucide="chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>While rare, "brick walls" do exist. In such cases, we provide a detailed 'Negative Search' report showing every archive consulted, which is invaluable for future research attempts.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Footer -->
     <footer>
         <div class="container">
@@ -232,6 +318,14 @@
     <script src="js/main.js"></script>
     <script>
         lucide.createIcons();
+
+        // FAQ Toggle Logic
+        document.querySelectorAll('.faq-question').forEach(question => {
+            question.addEventListener('click', () => {
+                const item = question.parentElement;
+                item.classList.toggle('active');
+            });
+        });
     </script>
 </body>
 </html>
