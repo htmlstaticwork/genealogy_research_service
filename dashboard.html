@@ -342,6 +342,17 @@
             .dashboard-header h1 {
                 font-size: 1.5rem;
             }
+
+            .card {
+                padding: 1.25rem !important;
+            }
+            .dashboard-section h3 {
+                font-size: 1.2rem;
+            }
+            .dashboard-table th, .dashboard-table td {
+                padding: 0.5rem !important;
+                font-size: 0.85rem;
+            }
         }
 
         /* Hover effect for document links */
@@ -766,31 +777,33 @@
                     <p>Track the status of your active research inquiries.</p>
                 </div>
                 <div class="card" style="padding: 2rem;">
-                    <table class="dashboard-table" style="width: 100%; border-collapse: collapse;">
-                        <thead>
-                            <tr style="border-bottom: 2px solid var(--border-color);">
-                                <th style="padding: 1rem; text-align: left;">Request ID</th>
-                                <th style="padding: 1rem; text-align: left;">Subject</th>
-                                <th style="padding: 1rem; text-align: left;">Status</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr style="border-bottom: 1px solid var(--border-color);">
-                                <td style="padding: 1rem;">#REQ-882</td>
-                                <td style="padding: 1rem;">Norfolk Parish Records</td>
-                                <td style="padding: 1rem;"><span
-                                        style="background: rgba(46, 204, 113, 0.1); color: var(--success); padding: 0.25rem 0.75rem; border-radius: 20px; font-size: 0.8rem;">Completed</span>
-                                </td>
-                            </tr>
-                            <tr style="border-bottom: 1px solid var(--border-color);">
-                                <td style="padding: 1rem;">#REQ-901</td>
-                                <td style="padding: 1rem;">WWI Military Archives</td>
-                                <td style="padding: 1rem;"><span
-                                        style="background: rgba(243, 156, 18, 0.1); color: var(--warning); padding: 0.25rem 0.75rem; border-radius: 20px; font-size: 0.8rem;">In
-                                        Progress</span></td>
-                            </tr>
-                        </tbody>
-                    </table>
+                    <div style="width: 100%; overflow-x: auto;">
+                        <table class="dashboard-table" style="width: 100%; border-collapse: collapse;">
+                            <thead>
+                                <tr style="border-bottom: 2px solid var(--border-color);">
+                                    <th style="padding: 1rem; text-align: left;">Request ID</th>
+                                    <th style="padding: 1rem; text-align: left;">Subject</th>
+                                    <th style="padding: 1rem; text-align: left;">Status</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr style="border-bottom: 1px solid var(--border-color);">
+                                    <td style="padding: 1rem;">#REQ-882</td>
+                                    <td style="padding: 1rem;">Norfolk Parish Records</td>
+                                    <td style="padding: 1rem;"><span
+                                            style="background: rgba(46, 204, 113, 0.1); color: var(--success); padding: 0.25rem 0.75rem; border-radius: 20px; font-size: 0.8rem;">Completed</span>
+                                    </td>
+                                </tr>
+                                <tr style="border-bottom: 1px solid var(--border-color);">
+                                    <td style="padding: 1rem;">#REQ-901</td>
+                                    <td style="padding: 1rem;">WWI Military Archives</td>
+                                    <td style="padding: 1rem;"><span
+                                            style="background: rgba(243, 156, 18, 0.1); color: var(--warning); padding: 0.25rem 0.75rem; border-radius: 20px; font-size: 0.8rem;">In
+                                            Progress</span></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
                 </div>
             </div>
 
@@ -810,32 +823,34 @@
                 </div>
                 <div class="card" style="padding: 2rem; text-align: center; align-items: center;">
                     <h3>Payment History</h3>
-                    <table class="dashboard-table" style="width: 100%; border-collapse: collapse; margin-top: 1.5rem;">
-                        <thead>
-                            <tr style="border-bottom: 1px solid var(--border-color); text-align: center;">
-                                <th style="padding: 1rem 0; text-align: center;">Date</th>
-                                <th style="padding: 1rem 0; text-align: center;">Detail</th>
-                                <th style="padding: 1rem 0; text-align: center;">Amount</th>
-                                <th style="padding: 1rem 0; text-align: center;">Invoice</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr style="border-bottom: 1px solid var(--border-color); text-align: center;">
-                                <td style="padding: 1rem 0; text-align: center;">Mar 12, 2026</td>
-                                <td style="padding: 1rem 0; text-align: center;">Monthly Credit</td>
-                                <td style="padding: 1rem 0; text-align: center;">$149.00</td>
-                                <td style="padding: 1rem 0; text-align: center;"><a href="#" class="billing-link"
-                                        style="color: var(--secondary-color);">PDF</a></td>
-                            </tr>
-                            <tr style="border-bottom: 1px solid var(--border-color); text-align: center;">
-                                <td style="padding: 1rem 0; text-align: center;">Feb 12, 2026</td>
-                                <td style="padding: 1rem 0; text-align: center;">Research Credit</td>
-                                <td style="padding: 1rem 0; text-align: center;">$149.00</td>
-                                <td style="padding: 1rem 0; text-align: center;"><a href="#" class="billing-link"
-                                        style="color: var(--secondary-color);">PDF</a></td>
-                            </tr>
-                        </tbody>
-                    </table>
+                    <div style="width: 100%; overflow-x: auto;">
+                        <table class="dashboard-table" style="width: 100%; border-collapse: collapse; margin-top: 1.5rem;">
+                            <thead>
+                                <tr style="border-bottom: 1px solid var(--border-color); text-align: center;">
+                                    <th style="padding: 1rem 0; text-align: center;">Date</th>
+                                    <th style="padding: 1rem 0; text-align: center;">Detail</th>
+                                    <th style="padding: 1rem 0; text-align: center;">Amount</th>
+                                    <th style="padding: 1rem 0; text-align: center;">Invoice</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr style="border-bottom: 1px solid var(--border-color); text-align: center;">
+                                    <td style="padding: 1rem 0; text-align: center;">Mar 12, 2026</td>
+                                    <td style="padding: 1rem 0; text-align: center;">Monthly Credit</td>
+                                    <td style="padding: 1rem 0; text-align: center;">$149.00</td>
+                                    <td style="padding: 1rem 0; text-align: center;"><a href="#" class="billing-link"
+                                            style="color: var(--secondary-color);">PDF</a></td>
+                                </tr>
+                                <tr style="border-bottom: 1px solid var(--border-color); text-align: center;">
+                                    <td style="padding: 1rem 0; text-align: center;">Feb 12, 2026</td>
+                                    <td style="padding: 1rem 0; text-align: center;">Research Credit</td>
+                                    <td style="padding: 1rem 0; text-align: center;">$149.00</td>
+                                    <td style="padding: 1rem 0; text-align: center;"><a href="#" class="billing-link"
+                                            style="color: var(--secondary-color);">PDF</a></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
                 </div>
             </div>
 

@@ -846,4 +846,12 @@ footer {
     background: var(--secondary-hover);
     transform: translateY(-5px);
     box-shadow: var(--shadow-lg);
+}@media (max-width: 600px) {
+    .btn-group-mobile {
+        flex-direction: column !important;
+        width: 100%;
+    }
+    .btn-group-mobile .btn {
+        width: 100% !important;
+    }
 }
