@@ -427,6 +427,19 @@ footer {
     height: 3px;
     background: var(--text-primary);
     transition: var(--transition);
+    transform-origin: left;
+}
+
+.hamburger.open span:nth-child(1) {
+    transform: rotate(45deg);
+}
+
+.hamburger.open span:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburger.open span:nth-child(3) {
+    transform: rotate(-45deg);
 }
 
 @media (min-width: 1024px) {
@@ -487,11 +500,17 @@ footer {
         border-top: 1px solid var(--border-color);
         max-height: calc(100vh - 80px);
         overflow-y: auto;
-        display: flex;
+        opacity: 0;
+        transform: translateY(-10px);
+        transition: opacity 0.3s ease, transform 0.3s ease;
+        pointer-events: none;
     }
 
     .nav-links.active {
         display: flex;
+        opacity: 1;
+        transform: translateY(0);
+        pointer-events: all;
     }
 
     .mobile-controls {
